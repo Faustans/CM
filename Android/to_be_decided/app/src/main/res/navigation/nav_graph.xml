@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/FirstFragment">
+
+    <fragment
+        android:id="@+id/FirstFragment"
+        android:name="com.example.to_be_decided.FirstFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_first">
+
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/SecondFragment"
+        android:name="com.example.to_be_decided.SecondFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_second">
+
+        <action
+            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+        <action
+            android:id="@+id/action_SecondFragment_to_my_house"
+            app:destination="@id/my_house" />
+        <action
+            android:id="@+id/action_SecondFragment_to_my_medication_list"
+            app:destination="@id/my_medication_list" />
+    </fragment>
+    <fragment
+        android:id="@+id/my_house"
+        android:name="com.example.to_be_decided.my_house"
+        android:label="@string/my_house_label"
+        tools:layout="@layout/my_house">
+
+        <action
+            android:id="@+id/action_my_house_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/my_medication"
+        android:name="com.example.to_be_decided.my_medication"
+        android:label="@string/my_medication_label"
+        tools:layout="@layout/my_medication">
+
+        <action
+            android:id="@+id/action_my_medication_to_my_medication_list"
+            app:destination="@id/my_medication_list" />
+    </fragment>
+    <fragment
+        android:id="@+id/my_medication_list"
+        android:name="com.example.to_be_decided.my_medication_list"
+        android:label="@string/my_medication_list_label"
+        tools:layout="@layout/my_medicationList">
+
+        <action
+            android:id="@+id/action_my_house_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
+        <action
+            android:id="@+id/action_my_medication_list_to_my_medication"
+            app:destination="@id/my_medication" />
+    </fragment>
+</navigation>
